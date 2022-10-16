@@ -12,5 +12,5 @@ jobs:
         uses: actions/checkout@v3
       - name: Execute Fork Horusec
         run: |
-          curl -fsSL https://raw.githubusercontent.com/Fotkurz/horusec/chore/mute-execution-flag/deployments/scripts/install.sh | bash -s latest
-          horusec start -p="./" -e="true" -z
+          git clone https://github.com/Fotkurz/horusec.git && cd horusec && git checkout chore/mute-execution-flag && git pull && make build-dev && ./horusec start -z
+          
