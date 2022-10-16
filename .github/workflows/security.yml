@@ -18,7 +18,7 @@ jobs:
           ls -la
       - name: CD into horusec
         run: |
-          cd ./horusec && -ls -la
+          cd ./horusec && ls -la
       - name: Checkout to correct branch
         run: |
           git checkout chore/mute-execution-flag
