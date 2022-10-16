@@ -10,7 +10,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Execute Fork Horusec
+      - name: Clone horusec and checkout to correct branch
         run: |
-          git clone https://github.com/Fotkurz/horusec.git && cd horusec && git checkout chore/mute-execution-flag && git pull && make build-dev && ./horusec start -p=".." -i="**/horusec/**
-          
+          git clone https://github.com/Fotkurz/horusec.git && cd horusec && git checkout chore/mute-execution-flag
+      - name: Build
+        run: |
+          make build-dev
+      - name: Show help
+        run: |
+          ./horusec start --help
+      - name: Run horusec
+        run: |
+          ./horusec -p=".." -i="**/horusec/**"
+      
