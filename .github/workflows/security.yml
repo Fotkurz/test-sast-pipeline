@@ -1,0 +1,16 @@
+
+name: Execute SAST
+
+on: push
+
+jobs:
+  SAST:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Execute Fork Horusec
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/Fotkurz/horusec/main/deployments/scripts/install.sh | bash -s latest
+          horusec start -p="./" -e="true" -z
