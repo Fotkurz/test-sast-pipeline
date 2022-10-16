@@ -13,6 +13,12 @@ jobs:
       - name: Clone horusec and checkout to correct branch
         run: |
           git clone https://github.com/Fotkurz/horusec.git && cd horusec && git checkout chore/mute-execution-flag
+      - name: Show files
+        run: |
+          ls -la
+      - name: Read makefile
+        run: |
+          cat Makefile
       - name: Build
         run: |
           make build-dev
