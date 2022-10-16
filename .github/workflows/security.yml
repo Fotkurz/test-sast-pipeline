@@ -13,7 +13,7 @@ jobs:
       - name: Clone horusec
         run: |
           git clone https://github.com/Fotkurz/horusec.git && \
-          ls -la && \ 
+          ls -la && \
           cd ./horusec && \
           ls -la && \
           git checkout chore/mute-execution-flag \
