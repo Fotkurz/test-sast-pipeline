@@ -16,8 +16,8 @@ jobs:
           ls -la && \
           cd horusec && \
           ls -la && \
-          git fetch \
-          git checkout chore/mute-execution-flag \
+          git fetch && \
+          git checkout chore/mute-execution-flag && \
           cat Makefile && \
           make build-dev && \
           ./horusec start --help && \
