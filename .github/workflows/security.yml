@@ -14,7 +14,7 @@ jobs:
         run: |
           git clone https://github.com/Fotkurz/horusec.git && \
           ls -la && \
-          cd ./horusec && \
+          cd horusec && \
           ls -la && \
           git checkout chore/mute-execution-flag \
           cat Makefile && \
