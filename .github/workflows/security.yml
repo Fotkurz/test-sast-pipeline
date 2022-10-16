@@ -10,12 +10,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Clone horusec and checkout to correct branch
+      - name: Clone horusec
         run: |
-          git clone https://github.com/Fotkurz/horusec.git && cd horusec && git checkout chore/mute-execution-flag
+          git clone https://github.com/Fotkurz/horusec.git
       - name: Show files
         run: |
           ls -la
+      - name: CD into horusec
+        run: |
+          cd ./horusec
+      - name: Checkout to correct branch
+        run: |
+          git checkout chore/mute-execution-flag
       - name: Read makefile
         run: |
           cat Makefile
